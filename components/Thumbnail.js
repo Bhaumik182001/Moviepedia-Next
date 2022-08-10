@@ -28,4 +28,6 @@ const Thumbnail = forwardRef(({data}, ref ) => {
     )
 })
 
+Thumbnail.displayName = "Thumbnail";
+
 export default Thumbnail;
