@@ -17,13 +17,9 @@ function Navbar() {
     <nav className={styles.nav}>
        
         <div className={styles.container}>
-          {Object.entries(response).map(([key, {title, url}])=>{
-            return(
-              <div>
-                <h2 className={styles.item} key={key} onClick={()=> router.push(`/?genre=${key}`)}>{title}</h2>
-              </div>
-            )
-          })}
+          {Object.entries(response).map(([key, {title, url}])=>(
+              <h2 className={styles.item} key={key} onClick={()=> router.push(`/?genre=${key}`)}>{title}</h2>
+            ))}
         </div>
        
        {/* special div tag for the purpose of fader effect */}
