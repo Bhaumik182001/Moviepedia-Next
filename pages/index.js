@@ -13,7 +13,7 @@ export default function Home({movieData}) {
       
       <Head>
         <title>Moviepedia</title>
-        <link rel="icon" href="https://cryptologotypes.com/img/logos/raiden-network-token/raiden-network-token-rdn-logo.png" />
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3418/3418886.png" />
       </Head>
 
       <Header /> 
