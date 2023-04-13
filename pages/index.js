@@ -8,6 +8,7 @@ import response from '../utils/response'
 
 //main home page which act as default page
 export default function Home({movieData}) {
+  
   return (
     <div className={styles.container}>
       
