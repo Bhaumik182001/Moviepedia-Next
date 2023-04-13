@@ -1,5 +1,4 @@
-import Head from 'next/head'
-import Image from 'next/image'
+
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
@@ -12,10 +11,7 @@ export default function Home({movieData}) {
   return (
     <div className={styles.container}>
       
-      <Head>
-        <title>Moviepedia</title>
-        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3418/3418886.png" />
-      </Head>
+     
 
       <Header /> 
       <Navbar /> 

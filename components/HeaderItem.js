@@ -12,7 +12,7 @@ function HeaderItem({title, Icon}) {
     return (
     <div className={styles.container}>
         <Icon className={styles.headerImage} />
-        <p className={styles.headerTitle}>{title}</p>
+        {/* <p className={styles.headerTitle}>{title}</p> */}
     </div>
   )
 }

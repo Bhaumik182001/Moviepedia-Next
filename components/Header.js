@@ -4,7 +4,7 @@ import HeaderItem from "./HeaderItem";
 
 function Header() {
     const styles = {
-        container: "m-5 flex flex-col sm:flex-row h-auto  justify-between h-auto ",
+        container: "mx-5 mt-5 mb-3 flex flex-col sm:flex-row h-auto my-auto justify-between h-auto ",
         headerList: "flex flex-grow max-w-2xl justify-evenly",
         imageContainer: "object-contain",
         font: "font-bold text-5xl cursor-pointer"

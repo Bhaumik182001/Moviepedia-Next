@@ -11,7 +11,7 @@ export default function movieContent({request}) {
         popularity: request.popularity,
         release_date: request.release_date,
         revenue: request.revenue,
-        votes: request.vote_count,
+        votes: parseInt(request.vote_average/2, 10),
         runtime: request.runtime,
         status: request.status,
         poster: `${BASE_URL}${request.backdrop_path}`,
@@ -35,18 +35,21 @@ export default function movieContent({request}) {
             <p className="text-5xl font-bold md:text-8xl">{details.title}</p>
 
             {/* Overview/Description */}
-            <p className="w-[50%]">{details.description}</p>
+            <p className="w-[50%] text-2xl">{details.description}</p>
 
             {/* Popularity */}
-            <p>{details.popularity}</p>
+            <p>{details.votes}</p>
           </div>
 
           <div className="absolute bottom-0 w-full h-20 md:h-60 bg-gradient-to-b from-transparent to-black" />
         </div>
 
-        {request.production_companies.map((obj)=>{
+      {/* Production_company */}
+        {/* {request.production_companies.map((obj)=>{
             return <img key={obj.id} className="h-10" src={`${BASE_URL}${obj.logo_path}`}/>
-        })}
+        })} */}
+
+
         {/* Production Company */}
         {/* Production Country */}
         {/* Release Date */}
