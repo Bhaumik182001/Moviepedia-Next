@@ -34,7 +34,7 @@ export default function tvContent({request}) {
         <img src={details.poster}/>
 
         {request.production_companies.map((obj)=>{
-            return <img className="h-10" src={`${BASE_URL}${obj.logo_path}`}/>
+            return <img key={obj.id} className="h-10" src={`${BASE_URL}${obj.logo_path}`}/>
         })}
         {/* Production Company */}
         {/* Production Country */}
