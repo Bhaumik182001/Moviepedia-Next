@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import StarRating from "../../components/StarRating";
 import { ArrowLeftIcon, LinkIcon } from "@heroicons/react/outline";
-
+import Link from 'next/link'
 
 export default function movieContent({request, cast}) {
 
@@ -56,10 +56,13 @@ export default function movieContent({request, cast}) {
               <div>
                 <div className="flex space-x-2">
 
-                <a href="/" className={styles.button}>
+                <Link href={"/"}>
+                <button  className={styles.button}>
                   <p className={styles.iconLabel}>Go Back</p>
                   <ArrowLeftIcon className={styles.icon}/>
-                </a>
+                </button>
+                </Link>
+                
 
                 <a href={details.link} className={styles.button}>
                   <p className={styles.iconLabel}>Visit Site</p>

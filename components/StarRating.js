@@ -20,6 +20,7 @@ const StarRating = ({rating}) => {
       >
         {starIds.map((id) => (
           <img
+            key={id}
             src={getImg(id)}
             className="w-7 sm:w-10 lg:w-12"
           />
