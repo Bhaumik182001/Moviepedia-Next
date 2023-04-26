@@ -58,7 +58,7 @@ export default function movieContent({request, cast, trailer, recommended}) {
                 <div className="flex space-x-2">
                   {details.crew.map(res=>{
                     return (
-                      <div className="flex flex-col">
+                      <div key={res.id} className="flex flex-col">
                         <div key={res.profile_path} className="relative h-20 w-20"><Image layout="fill" className="rounded-full" src={`${BASE_URL}${res.profile_path}`}/></div>
                         <p className="break-all bg-black-800" key={res.id}>{res.name}</p>
                       </div>
@@ -66,7 +66,7 @@ export default function movieContent({request, cast, trailer, recommended}) {
                   
                   })}
                 </div>
-                <div className="flex space-x-2">
+                <div className="flex space-x-2 z-20">
 
                 <Link href={"/"}>
                 <button  className={styles.button}>
@@ -101,7 +101,7 @@ export default function movieContent({request, cast, trailer, recommended}) {
             
           </div>
 
-          <div className="absolute bottom-0 w-full h-20 md:h-40 bg-gradient-to-b from-transparent to-black" />
+          <div className="absolute bottom-0 w-full h-20 md:h-40 bg-gradient-to-b from-transparent to-black z-0" />
         </div>
 
       {/* Production_company */}
