@@ -1,9 +1,7 @@
 import Image from "next/image";
-import { useEffect } from "react";
 import StarRating from "../../components/StarRating";
 import { ArrowLeftIcon, LinkIcon } from "@heroicons/react/outline";
 import Link from 'next/link'
-import RecommendationCard from "../../components/RecommendationCard";
 import Thumbnail from "../../components/Thumbnail";
 
 export default function movieContent({request, cast, trailer, recommended}) {
