@@ -42,7 +42,7 @@ export default function movieContent({request, cast, trailer, recommended}) {
         <Image layout="fill" className="object-cover" src={details.poster}/>
           <div className="  absolute px-2 top-10  mx-auto ">
             {/* title */}
-            <p className="drop-shadow-lg shadow-black text-5xl font-bold md:text-8xl">{details.title}</p>
+            <p className="mix-blend-difference drop-shadow-lg shadow-black text-5xl font-bold md:text-8xl">{details.title}</p>
            
            {/* Popularity */}
             <StarRating rating={details.votes}/>
@@ -50,7 +50,7 @@ export default function movieContent({request, cast, trailer, recommended}) {
             {/* Overview/Description */}
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <p className="drop-shadow-lg shadow-black text-2xl">{details.description}</p>
+                <p className="drop-shadow-lg mix-blend-difference shadow-black text-2xl">{details.description}</p>
               </div>
               <div>
                 <div className="flex space-x-2">
