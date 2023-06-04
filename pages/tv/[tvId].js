@@ -54,7 +54,7 @@ export default function movieContent({request, cast, trailer, recommended}) {
                 <p className="drop-shadow-lg shadow-black text-2xl">{details.description}</p>
               </div>
               <div>
-                <div className="flex space-x-2">
+                {/* <div className="flex space-x-2">
                   {details.crew.map(res=>{
                     return (
                       <div key={res.id} className="flex flex-col">
@@ -64,7 +64,7 @@ export default function movieContent({request, cast, trailer, recommended}) {
                     )
                   
                   })}
-                </div>
+                </div> */}
                 <div className="flex space-x-2 z-20">
 
                 <Link href={"/"}>
