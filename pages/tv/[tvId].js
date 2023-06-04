@@ -43,7 +43,7 @@ export default function movieContent({request, cast, trailer, recommended}) {
         <Image layout="fill" className="object-cover" src={details.poster}/>
           <div className="  absolute px-2 top-10  mx-auto ">
             {/* title */}
-            <p className="drop-shadow-lg shadow-black text-5xl font-bold md:text-8xl">{details.title}</p>
+            <p className="text-white drop-shadow-lg shadow-black text-5xl font-bold md:text-8xl">{details.title}</p>
            
            {/* Popularity */}
             <StarRating rating={details.votes}/>
