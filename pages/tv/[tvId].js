@@ -10,7 +10,7 @@ export default function movieContent({request, cast, trailer, recommended}) {
   const styles = {
     icon: "w-7 text-black my-auto",
     iconLabel: "text-2xl my-auto text-black pr-2",
-    button: "flex bg-white rounded-md px-2 py-1"
+    button: "flex bg-white rounded-md px-2 py-1 active:scale-95 hover:scale-110 transform transition duration-2000 ease-linear"
   }
 
     const BASE_URL = "https://image.tmdb.org/t/p/original/"
@@ -29,7 +29,7 @@ export default function movieContent({request, cast, trailer, recommended}) {
         imdb: `https://www.imdb.com/title/${request.imdb_id}/`,
         companies: request.production_companies,
         crew: cast.filter(res=> res.known_for_department == "Acting").slice(0, 5),
-        video: trailer.filter(res=> res.type=="Trailer")[0].key || "https://www.yotube.com"
+        video: trailer.filter(res=> res.type=="Trailer")[0]?.key || "https://www.yotube.com"
     }
 
     console.log(recommended.results)
@@ -84,11 +84,11 @@ export default function movieContent({request, cast, trailer, recommended}) {
 
                 
                 
-                <a href={details.imdb} className="lg:px-5 my-auto lg:py-3 rounded-md bg-yellow-300 flex">
+                <a href={details.imdb} className="lg:px-5 my-auto lg:py-3 rounded-md bg-yellow-300 flex active:scale-95 hover:scale-110 transform transition duration-2000 ease-linear">
                   <p className="text-black text-2xl font-extrabold">IMDB</p>
                 </a>
 
-                <a href={`https://www.youtube.com//watch?v=${details.video}`} className="lg:px-5 my-auto lg:py-3 rounded-md bg-red-600 flex">
+                <a href={`https://www.youtube.com//watch?v=${details.video}`} className="lg:px-5 my-auto lg:py-3 rounded-md bg-red-600 flex active:scale-95 hover:scale-110 transform transition duration-2000 ease-linear">
                   <p className="text-white text-2xl font-semibold">Trailer</p>
                 </a>
                 </div>

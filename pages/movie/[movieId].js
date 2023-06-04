@@ -28,7 +28,7 @@ export default function movieContent({request, cast, trailer, recommended}) {
         imdb: `https://www.imdb.com/title/${request.imdb_id}/`,
         companies: request.production_companies,
         crew: cast.filter(res=> res.known_for_department == "Acting").slice(0, 5),
-        video: trailer?.filter(res=> res.type=="Trailer")[0]?.key
+        video: trailer?.filter(res=> res.type=="Trailer")[0]?.key ||  "https://www.yotube.com"
     }
 
     console.log(recommended.results)
