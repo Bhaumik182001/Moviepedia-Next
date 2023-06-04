@@ -7,9 +7,9 @@ import Thumbnail from "../../components/Thumbnail";
 export default function movieContent({request, cast, trailer, recommended}) {
 
   const styles = {
-    icon: "w-7 text-black my-auto",
+    icon: "w-7 text-black my-auto ",
     iconLabel: "text-2xl my-auto text-black pr-2",
-    button: "flex bg-white rounded-md px-2 py-1"
+    button: "flex bg-white rounded-md px-2 py-1 active:scale-95 hover:scale-110 transform transition duration-2000 ease-linear"
   }
 
     const BASE_URL = "https://image.tmdb.org/t/p/original/"
@@ -28,7 +28,7 @@ export default function movieContent({request, cast, trailer, recommended}) {
         imdb: `https://www.imdb.com/title/${request.imdb_id}/`,
         companies: request.production_companies,
         crew: cast.filter(res=> res.known_for_department == "Acting").slice(0, 5),
-        video: trailer.filter(res=> res.type=="Trailer")[0].key
+        video: trailer?.filter(res=> res.type=="Trailer")[0]?.key
     }
 
     console.log(recommended.results)
@@ -50,21 +50,21 @@ export default function movieContent({request, cast, trailer, recommended}) {
             {/* Overview/Description */}
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <p className="drop-shadow-lg mix-blend-difference shadow-black text-2xl">{details.description}</p>
+                <p className="text-slate-300  shadow-black text-2xl">{details.description}</p>
               </div>
               <div>
-                <div className="flex space-x-2">
+                {/* <div className="flex space-x-2">
                   {details.crew.map(res=>{
                     return (
-                      <div key={res.id} className="flex flex-col">
-                        <div key={res.profile_path} className="relative h-20 w-20"><Image layout="fill" className="rounded-full" src={`${BASE_URL}${res.profile_path}`}/></div>
-                        <p className="break-all bg-black-800" key={res.id}>{res.name}</p>
+                      <div key={res.id} className="flex flex-col space-x-3 items-center justify-center my-auto">
+                        <div key={res.profile_path} className="relative h-20 w-20"><Image layout="fill" className="rounded-lg" src={`${BASE_URL}${res.profile_path}`}/></div>
+                        <p className="break-all max-w-[180px]" key={res.id}>{res.name}</p>
                       </div>
                     )
                   
                   })}
-                </div>
-                <div className="flex space-x-2 z-20">
+                </div> */}
+                <div className="flex space-x-4 z-20 ">
 
                 <Link href={"/"}>
                 <button  className={styles.button}>
@@ -76,18 +76,18 @@ export default function movieContent({request, cast, trailer, recommended}) {
                
                 <a href={details.link} className={styles.button}>
                   <p className={styles.iconLabel}>Visit Site</p>
-                <LinkIcon className={styles.icon} />
+                  <LinkIcon className={styles.icon} />
                 </a>
                
                 
 
                 
                 
-                <a href={details.imdb} className="lg:px-5 my-auto lg:py-3 rounded-md bg-yellow-300 flex">
+                <a href={details.imdb} className="lg:px-5 my-auto lg:py-3 rounded-md bg-yellow-300 flex hover:scale-110 transform transition duration-400 ease-linear active:scale-95">
                   <p className="text-black text-2xl font-extrabold">IMDB</p>
                 </a>
 
-                <a href={`https://www.youtube.com//watch?v=${details.video}`} className="lg:px-5 my-auto lg:py-3 rounded-md bg-red-600 flex">
+                <a href={`https://www.youtube.com//watch?v=${details.video}`} className="lg:px-5 my-auto lg:py-3 rounded-md bg-red-600 flex hover:scale-110 transform transition duration-1000 ease-linear active:scale-95">
                   <p className="text-white text-2xl font-semibold">Trailer</p>
                 </a>
                 </div>
